@@ -14,8 +14,6 @@ module WireMockAPIClient
   // The following module contains the types that can be used to define behavior on wiremock by means of an HTTP request.
   module WireMockDataTypes =
     
-    let inline isNull value = obj.ReferenceEquals(value, null)
-    
     let [<Literal>] WIREMOCK_GET = "GET"
     let [<Literal>] WIREMOCK_POST = "POST"
   

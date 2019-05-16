@@ -31,7 +31,7 @@ module WireMockAPIClient
           jobj [ 
             "matchesJsonPath" .= x.matchesJsonPath
           ]
-        else if isNull x.matchesJsonPath && not (isNull x.equalToJson) then 
+        elif isNull x.matchesJsonPath && not (isNull x.equalToJson) then 
           jobj [ 
             "equalToJson" .= x.equalToJson
           ]

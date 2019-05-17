@@ -3,8 +3,8 @@ This source code is licensed under the Apache 2.0 license found in the
 LICENSE file in the root directory of this source tree.*)
 module WireMockAPIClient
     
-  open System.Text
   open System
+  open System.Text
   open System.Net.Http
   open System.Web
   open System.Json
@@ -13,8 +13,6 @@ module WireMockAPIClient
   
   // The following module contains the types that can be used to define behavior on wiremock by means of an HTTP request.
   module WireMockDataTypes =
-    
-    let inline isNull value = obj.ReferenceEquals(value, null)
     
     let [<Literal>] WIREMOCK_GET = "GET"
     let [<Literal>] WIREMOCK_POST = "POST"
@@ -31,7 +29,7 @@ module WireMockAPIClient
           jobj [ 
             "matchesJsonPath" .= x.matchesJsonPath
           ]
-        else if isNull x.matchesJsonPath && not (isNull x.equalToJson) then 
+        elif isNull x.matchesJsonPath && not (isNull x.equalToJson) then 
           jobj [ 
             "equalToJson" .= x.equalToJson
           ]
